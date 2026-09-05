@@ -2,24 +2,24 @@
 
 A small **VPN watcher** for Windows and macOS. It is **not** a VPN: it does not connect, route, or encrypt traffic.
 
-VPN clients sometimes keep showing вЂњconnectedвЂќ while the tunnel is already dead, the adapter is gone, or traffic is leaving on the ordinary WiвЂ‘Fi. VPNfriend watches what the OS and this process actually see, shows it on a compact status card, and can warn you if marked programs are open while protection looks off.
+VPN clients sometimes keep showing “connected” while the tunnel is already dead, the adapter is gone, or traffic is leaving on the ordinary Wi‑Fi. VPNfriend watches what the OS and this process actually see, shows it on a compact status card, and can warn you if marked programs are open while protection looks off.
 
 **The program is still early / unfinished and is in active development.** Expect bugs, rough edges, and incomplete behaviour.
 
-**Current version: 1.0.1** В· Windows 7+ (.NET Framework 4.x) В· macOS 12+
+**Current version: 1.0.1** · Windows 7+ (.NET Framework 4.x) · macOS 12+
 
-Author: [Denis Wolkow](mailto:denniesw2@gmail.com) В· Questions: [Discussions](https://github.com/Denny-Wolkow/VPNfriend-releases/discussions)
+Author: [Denis Wolkow](mailto:denniesw2@gmail.com) · Questions: [Discussions](https://github.com/Denny-Wolkow/VPNfriend-releases/discussions)
 
 ---
 
 ## Download
 
-Official builds (public): [**Releases**](https://github.com/Denny-Wolkow/VPNfriend-releases/releases). This repository is **downloads only** (no source). Source is not published. You may **not** build or publish your own copies without the authorвЂ™s permission (see [LICENSE](LICENSE)).
+Official builds (public): [**Releases**](https://github.com/Denny-Wolkow/VPNfriend-releases/releases). This GitHub repository is **private** (source). You may **not** build or publish your own copies without the author’s permission (see [LICENSE](LICENSE)).
 
 | Platform | File |
 |----------|------|
 | Windows | [`VPNfriend.exe`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.exe) |
-| macOS (preferred) | [`VPNfriend.dmg`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.dmg) вЂ” drag the app onto **Applications** |
+| macOS (preferred) | [`VPNfriend.dmg`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.dmg) — drag the app onto **Applications** |
 | macOS (zip) | [`VPNfriend-macOS.zip`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend-macOS.zip) |
 
 Release notes: [RELEASE_NOTES.md](RELEASE_NOTES.md).
@@ -30,10 +30,10 @@ Release notes: [RELEASE_NOTES.md](RELEASE_NOTES.md).
 
 Typical failure modes VPNfriend is meant to catch:
 
-1. The client UI still says вЂњconnectedвЂќ, but the virtual adapter is gone.
-2. The adapter is still there, but this machineвЂ™s public IPv4 did not change (dead / broken tunnel).
+1. The client UI still says “connected”, but the virtual adapter is gone.
+2. The adapter is still there, but this machine’s public IPv4 did not change (dead / broken tunnel).
 3. Marked apps (browser, Telegram, Discord, torrent, Tor, custom names) are open while VPN is off.
-4. Extra honesty checks: this appвЂ™s traffic not via the VPN adapter, system DNS still on ordinary WiвЂ‘Fi, system proxy set, IPv6 path around an IPv4-only VPN.
+4. Extra honesty checks: this app’s traffic not via the VPN adapter, system DNS still on ordinary Wi‑Fi, system proxy set, IPv6 path around an IPv4-only VPN.
 
 It does **not** replace a proper browser leak test (DNS-over-HTTPS, WebRTC). For that, open [ipleak.net](https://ipleak.net) from the tray / menu-bar menu.
 
@@ -43,11 +43,11 @@ It does **not** replace a proper browser leak test (DNS-over-HTTPS, WebRTC). For
 
 | Line | Meaning |
 |------|---------|
-| Title + colour | **On** (green) вЂ” selected client adapter is up. **Off** (red) вЂ” no such adapter. **Dead tunnel** (orange) вЂ” adapter up, but public IPv4 matched the non-VPN address twice (IP check must be on). |
-| IP country | Geolocation of the public IPv4 **this program** fetched. Not the node name from Happ/subscription. `вЂ”` until IP + geo succeed. |
-| IP / IPv6 | Public addresses of the VPNfriend process (if the interval is enabled). вЂњUnchangedвЂќ means same as remembered without VPN. |
+| Title + colour | **On** (green) — selected client adapter is up. **Off** (red) — no such adapter. **Dead tunnel** (orange) — adapter up, but public IPv4 matched the non-VPN address twice (IP check must be on). |
+| IP country | Geolocation of the public IPv4 **this program** fetched. Not the node name from Happ/subscription. `—` until IP + geo succeed. |
+| IP / IPv6 | Public addresses of the VPNfriend process (if the interval is enabled). “Unchanged” means same as remembered without VPN. |
 | Apps | Watched programs currently running (browsers, Telegram, Discord, torrent, Tor, custom list). |
-| Reason | Short measured issues (adapter missing, SOCKS-only, path/DNS/proxy notes, dead tunnel, вЂ¦). Long text wraps on the card. |
+| Reason | Short measured issues (adapter missing, SOCKS-only, path/DNS/proxy notes, dead tunnel, …). Long text wraps on the card. |
 
 Buttons on the card: copy status, **Links** window, quiet mode, settings, open the VPN client.
 
@@ -57,13 +57,13 @@ Buttons on the card: copy status, **Links** window, quiet mode, settings, open t
 
 **Always (no checkbox):**
 
-- Is the selected clientвЂ™s adapter visible? (Windows: virtual NIC; Mac: usually `utun` / related, with process checks for shared tunnels.)
+- Is the selected client’s adapter visible? (Windows: virtual NIC; Mac: usually `utun` / related, with process checks for shared tunnels.)
 - Which watched apps are open?
-- Does **this appвЂ™s** IPv4 / IPv6 path go via that adapter (separate from вЂњthe whole Mac/PC is in VPNвЂќ)?
-- Is system DNS still configured on ordinary WiвЂ‘Fi/Ethernet beside VPN?
+- Does **this app’s** IPv4 / IPv6 path go via that adapter (separate from “the whole Mac/PC is in VPN”)?
+- Is system DNS still configured on ordinary Wi‑Fi/Ethernet beside VPN?
 - Are system proxies enabled?
 
-**If вЂњpublic IP checkвЂќ is on:**
+**If “public IP check” is on:**
 
 - Public IPv4 of VPNfriend (ipify and fallbacks; system proxy ignored for the request).
 - Optional public IPv6 of VPNfriend.
@@ -78,12 +78,12 @@ Local Happ SOCKS without an adapter is **not** counted as VPN On.
 
 Tabs (same idea on Windows and Mac):
 
-1. **Settings** вЂ” VPN client, language, watched apps, grace periods, toasts/warnings, IP interval, window size/font/opacity, autostart (desktop shortcut on Windows).
-2. **Mine** вЂ” personal data behind an optional password:
-   - **Links** вЂ” useful third-party links (outages, DNS, maps, вЂ¦); tick which appear in the Links window.
-   - **VPN apps** вЂ” your collection of clients to switch from the tray / menu bar.
-   - **Data** вЂ” VPN providers (site, Telegram, Discord, email, optional secrets) and Mine lock password.
-3. **Help** / **Concepts** вЂ” built-in topics (RU/EN/ZH for long bodies where available).
+1. **Settings** — VPN client, language, watched apps, grace periods, toasts/warnings, IP interval, window size/font/opacity, autostart (desktop shortcut on Windows).
+2. **Mine** — personal data behind an optional password:
+   - **Links** — useful third-party links (outages, DNS, maps, …); tick which appear in the Links window.
+   - **VPN apps** — your collection of clients to switch from the tray / menu bar.
+   - **Data** — VPN providers (site, Telegram, Discord, email, optional secrets) and Mine lock password.
+3. **Help** / **Concepts** — built-in topics (RU/EN/ZH for long bodies where available).
 
 **Links window** (chain button): searchable list of ticked useful links + provider contacts. Empty until you tick items under Mine.
 
@@ -107,7 +107,7 @@ Psiphon/Lantern in **proxy-only** mode (no adapter) will not show as On.
 2. Run it. Only one instance; a newer copy from another folder can replace the old one.
 3. Tray icon + floating card. Settings from the gear or tray menu.
 
-**Uninstall:** tray в†’ вЂњUninstall VPNfriendвЂ¦вЂќ. If you delete the exe by hand, turn off autostart first (`HKCU\Software\Microsoft\Windows\CurrentVersion\Run` в†’ `VPNfriend`).
+**Uninstall:** tray → “Uninstall VPNfriend…”. If you delete the exe by hand, turn off autostart first (`HKCU\Software\Microsoft\Windows\CurrentVersion\Run` → `VPNfriend`).
 
 Log: `vpnfriend.log` next to the program (trimmed automatically).
 
@@ -125,9 +125,9 @@ macOS 12+. Prefer the DMG:
 
 If you launch from a USB/disk first, the app asks to copy into Applications (or to open the copy already there). After install, use the Applications copy.
 
-Gatekeeper: right-click в†’ Open if needed.
+Gatekeeper: right-click → Open if needed.
 
-On Mac, VPNfriend lives in the **menu bar** (green/red circle), not in the Dock. Left-click в†’ card; right-click в†’ menu. Shared `utun` counts only if the selected client process is running. Safari counts as a browser.
+On Mac, VPNfriend lives in the **menu bar** (green/red circle), not in the Dock. Left-click → card; right-click → menu. Shared `utun` counts only if the selected client process is running. Safari counts as a browser.
 
 Sources: [`mac/`](mac/). Build: see [`mac/README.txt`](mac/README.txt).
 
@@ -137,7 +137,7 @@ Sources: [`mac/`](mac/). Build: see [`mac/README.txt`](mac/README.txt).
 
 - Not a VPN, not a client, not a kill switch that blocks traffic.
 - Not a full DNS / IPv6 / WebRTC browser audit (use ipleak.net).
-- Not proof that вЂњevery app on the machine is inside the VPNвЂќ.
+- Not proof that “every app on the machine is inside the VPN”.
 
 ---
 
@@ -151,7 +151,7 @@ Sources: [`mac/`](mac/). Build: see [`mac/README.txt`](mac/README.txt).
 
 ## Legal Notice & Terms of Use
 
-В© 2026 **Denny-Wolkow**. All rights reserved.
+© 2026 **Denny-Wolkow**. All rights reserved.
 
 Full proprietary license: [LICENSE](LICENSE).
 
@@ -162,155 +162,155 @@ Publishing this project on GitHub does **not** waive copyright. Access is for vi
 
 # VPNfriend
 
-РќРµР±РѕР»СЊС€РѕР№ **РЅР°Р±Р»СЋРґР°С‚РµР»СЊ Р·Р° VPN** РґР»СЏ Windows Рё macOS. Р­С‚Рѕ **РЅРµ** VPN: РїСЂРѕРіСЂР°РјРјР° РЅРёС‡РµРіРѕ РЅРµ РїРѕРґРєР»СЋС‡Р°РµС‚ Рё РЅРµ С€РёС„СЂСѓРµС‚.
+Небольшой **наблюдатель за VPN** для Windows и macOS. Это **не** VPN: программа ничего не подключает и не шифрует.
 
-РљР»РёРµРЅС‚ РёРЅРѕРіРґР° РїРѕРєР°Р·С‹РІР°РµС‚ В«РїРѕРґРєР»СЋС‡РµРЅРѕВ», Р° Р°РґР°РїС‚РµСЂР° СѓР¶Рµ РЅРµС‚, С‚СѓРЅРЅРµР»СЊ РјС‘СЂС‚РІ, РёР»Рё С‚СЂР°С„РёРє СѓС…РѕРґРёС‚ РІ РѕР±С‹С‡РЅС‹Р№ WiвЂ‘Fi. VPNfriend СЃРјРѕС‚СЂРёС‚, С‡С‚Рѕ СЂРµР°Р»СЊРЅРѕ РІРёРґРЅРѕ СЃРёСЃС‚РµРјРµ Рё СЃР°РјРѕРјСѓ РїСЂРѕС†РµСЃСЃСѓ, РїРѕРєР°Р·С‹РІР°РµС‚ СЌС‚Рѕ РЅР° РєР°СЂС‚РѕС‡РєРµ Рё РјРѕР¶РµС‚ РїСЂРµРґСѓРїСЂРµРґРёС‚СЊ, РµСЃР»Рё РѕС‚РєСЂС‹С‚С‹ РѕС‚РјРµС‡РµРЅРЅС‹Рµ РїСЂРѕРіСЂР°РјРјС‹, Р° Р·Р°С‰РёС‚С‹ РЅРµС‚.
+Клиент иногда показывает «подключено», а адаптера уже нет, туннель мёртв, или трафик уходит в обычный Wi‑Fi. VPNfriend смотрит, что реально видно системе и самому процессу, показывает это на карточке и может предупредить, если открыты отмеченные программы, а защиты нет.
 
-**РџСЂРѕРіСЂР°РјРјР° РµС‰С‘ СЃС‹СЂР°СЏ Рё РЅР°С…РѕРґРёС‚СЃСЏ РІ РїСЂРѕС†РµСЃСЃРµ СЂР°Р·СЂР°Р±РѕС‚РєРё.** Р’РѕР·РјРѕР¶РЅС‹ РѕС€РёР±РєРё, С€РµСЂРѕС…РѕРІР°С‚РѕСЃС‚Рё Рё РЅРµР·Р°РІРµСЂС€С‘РЅРЅРѕРµ РїРѕРІРµРґРµРЅРёРµ.
+**Программа ещё сырая и находится в процессе разработки.** Возможны ошибки, шероховатости и незавершённое поведение.
 
-**РўРµРєСѓС‰Р°СЏ РІРµСЂСЃРёСЏ: 1.0.1** В· Windows 7+ (.NET Framework 4.x) В· macOS 12+
+**Текущая версия: 1.0.1** · Windows 7+ (.NET Framework 4.x) · macOS 12+
 
-РђРІС‚РѕСЂ: [Denis Wolkow](mailto:denniesw2@gmail.com) В· Р’РѕРїСЂРѕСЃС‹: [Discussions](https://github.com/Denny-Wolkow/VPNfriend-releases/discussions)
+Автор: [Denis Wolkow](mailto:denniesw2@gmail.com) · Вопросы: [Discussions](https://github.com/Denny-Wolkow/VPNfriend-releases/discussions)
 
 ---
 
-## РЎРєР°С‡Р°С‚СЊ
+## Скачать
 
-РћС„РёС†РёР°Р»СЊРЅС‹Рµ СЃР±РѕСЂРєРё (РїСѓР±Р»РёС‡РЅС‹Рµ): [**Releases**](https://github.com/Denny-Wolkow/VPNfriend-releases/releases). Р­С‚РѕС‚ СЂРµРїРѕР·РёС‚РѕСЂРёР№ **Р·Р°РєСЂС‹С‚С‹Р№** (РёСЃС…РѕРґРЅРёРєРё). РЎРѕР±РёСЂР°С‚СЊ Рё РІС‹РєР»Р°РґС‹РІР°С‚СЊ СЃРІРѕРё РєРѕРїРёРё **РЅРµР»СЊР·СЏ** Р±РµР· СЂР°Р·СЂРµС€РµРЅРёСЏ Р°РІС‚РѕСЂР° ([LICENSE](LICENSE)).
+Официальные сборки (публичные): [**Releases**](https://github.com/Denny-Wolkow/VPNfriend-releases/releases). Этот репозиторий **закрытый** (исходники). Собирать и выкладывать свои копии **нельзя** без разрешения автора ([LICENSE](LICENSE)).
 
-| РџР»Р°С‚С„РѕСЂРјР° | Р¤Р°Р№Р» |
+| Платформа | Файл |
 |-----------|------|
 | Windows | [`VPNfriend.exe`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.exe) |
-| macOS (СѓРґРѕР±РЅРµРµ) | [`VPNfriend.dmg`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.dmg) вЂ” РїРµСЂРµС‚Р°С‰РёС‚Рµ РїСЂРёР»РѕР¶РµРЅРёРµ РЅР° **В«РџСЂРѕРіСЂР°РјРјС‹В»** |
+| macOS (удобнее) | [`VPNfriend.dmg`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.dmg) — перетащите приложение на **«Программы»** |
 | macOS (zip) | [`VPNfriend-macOS.zip`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend-macOS.zip) |
 
-Р—Р°РјРµС‚РєРё Рє РІС‹РїСѓСЃРєР°Рј: [RELEASE_NOTES.md](RELEASE_NOTES.md).
+Заметки к выпускам: [RELEASE_NOTES.md](RELEASE_NOTES.md).
 
 ---
 
-## Р—Р°С‡РµРј СЌС‚Рѕ РЅСѓР¶РЅРѕ
+## Зачем это нужно
 
-РўРёРїРёС‡РЅС‹Рµ СЃР»СѓС‡Р°Рё:
+Типичные случаи:
 
-1. Р’ РєР»РёРµРЅС‚Рµ В«РїРѕРґРєР»СЋС‡РµРЅРѕВ», Р° РІРёСЂС‚СѓР°Р»СЊРЅРѕР№ РєР°СЂС‚С‹ СѓР¶Рµ РЅРµС‚.
-2. РљР°СЂС‚Р° РµСЃС‚СЊ, РЅРѕ РїСѓР±Р»РёС‡РЅС‹Р№ IPv4 РєР°Рє Р±РµР· VPN (РјС‘СЂС‚РІС‹Р№ С‚СѓРЅРЅРµР»СЊ).
-3. РћС‚РєСЂС‹С‚С‹ Р±СЂР°СѓР·РµСЂ / Telegram / Discord / С‚РѕСЂСЂРµРЅС‚ / Tor (Рё СЃРІРѕРё РёРјРµРЅР°), Р° VPN РІС‹РєР».
-4. Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕ: РїСѓС‚СЊ СЌС‚РѕР№ РїСЂРѕРіСЂР°РјРјС‹ РјРёРјРѕ VPN-Р°РґР°РїС‚РµСЂР°, СЃРёСЃС‚РµРјРЅС‹Р№ DNS РЅР° РѕР±С‹С‡РЅРѕР№ СЃРµС‚Рё, СЃРёСЃС‚РµРјРЅС‹Рµ РїСЂРѕРєСЃРё, IPv6 РјРёРјРѕ IPv4-only VPN.
+1. В клиенте «подключено», а виртуальной карты уже нет.
+2. Карта есть, но публичный IPv4 как без VPN (мёртвый туннель).
+3. Открыты браузер / Telegram / Discord / торрент / Tor (и свои имена), а VPN выкл.
+4. Дополнительно: путь этой программы мимо VPN-адаптера, системный DNS на обычной сети, системные прокси, IPv6 мимо IPv4-only VPN.
 
-Р­С‚Рѕ **РЅРµ** Р·Р°РјРµРЅР° РїСЂРѕРІРµСЂРєРё В«РіР»Р°Р·Р°РјРё СЃР°Р№С‚Р°В» (DoH, WebRTC). Р”Р»СЏ СЌС‚РѕРіРѕ вЂ” [ipleak.net](https://ipleak.net) РёР· РјРµРЅСЋ С‚СЂРµСЏ / РєСЂСѓР¶РєР°.
+Это **не** замена проверки «глазами сайта» (DoH, WebRTC). Для этого — [ipleak.net](https://ipleak.net) из меню трея / кружка.
 
 ---
 
-## РљР°СЂС‚РѕС‡РєР° СЃС‚Р°С‚СѓСЃР°
+## Карточка статуса
 
-| РЎС‚СЂРѕРєР° | РЎРјС‹СЃР» |
+| Строка | Смысл |
 |--------|--------|
-| Р—Р°РіРѕР»РѕРІРѕРє Рё С†РІРµС‚ | **Р’РєР»** (Р·РµР»С‘РЅС‹Р№) вЂ” РІРёРґРµРЅ Р°РґР°РїС‚РµСЂ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РєР»РёРµРЅС‚Р°. **Р’С‹РєР»** (РєСЂР°СЃРЅС‹Р№) вЂ” Р°РґР°РїС‚РµСЂР° РЅРµС‚. **РўСѓРЅРЅРµР»СЊ РјС‘СЂС‚РІ** (РѕСЂР°РЅР¶РµРІС‹Р№) вЂ” Р°РґР°РїС‚РµСЂ РµСЃС‚СЊ, Р° РїСѓР±Р»РёС‡РЅС‹Р№ IPv4 РґРІР° СЂР°Р·Р° СЃРѕРІРїР°Р» СЃ Р°РґСЂРµСЃРѕРј Р±РµР· VPN (РЅСѓР¶РЅР° РїСЂРѕРІРµСЂРєР° IP). |
-| РЎС‚СЂР°РЅР° IP | Р“РµРѕ РїСѓР±Р»РёС‡РЅРѕРіРѕ IPv4, РєРѕС‚РѕСЂС‹Р№ РїРѕР»СѓС‡РёР»Р° **СЃР°РјР°** РїСЂРѕРіСЂР°РјРјР°. РќРµ РёРјСЏ СѓР·Р»Р° РёР· Happ. `вЂ”`, РїРѕРєР° РЅРµС‚ IP Рё РіРµРѕ. |
-| IP / IPv6 | РџСѓР±Р»РёС‡РЅС‹Рµ Р°РґСЂРµСЃР° РїСЂРѕС†РµСЃСЃР° VPNfriend (РµСЃР»Рё РёРЅС‚РµСЂРІР°Р» РІРєР»СЋС‡С‘РЅ). В«РќРµ СЃРјРµРЅРёР»СЃСЏВ» вЂ” РєР°Рє Р·Р°РїРѕРјРЅРµРЅРЅС‹Р№ РґРѕРјР°С€РЅРёР№. |
-| РџСЂРёР»РѕР¶РµРЅРёСЏ | РћС‚РјРµС‡РµРЅРЅС‹Рµ РїСЂРѕРіСЂР°РјРјС‹, РєРѕС‚РѕСЂС‹Рµ СЃРµР№С‡Р°СЃ РѕС‚РєСЂС‹С‚С‹. |
-| РџСЂРёС‡РёРЅР° | РљСЂР°С‚РєРёРµ РёР·РјРµСЂРµРЅРёСЏ (РЅРµС‚ Р°РґР°РїС‚РµСЂР°, С‚РѕР»СЊРєРѕ SOCKS, РїСѓС‚СЊ/DNS/РїСЂРѕРєСЃРё, РјС‘СЂС‚РІС‹Р№ С‚СѓРЅРЅРµР»СЊвЂ¦). Р”Р»РёРЅРЅС‹Р№ С‚РµРєСЃС‚ РїРµСЂРµРЅРѕСЃРёС‚СЃСЏ. |
+| Заголовок и цвет | **Вкл** (зелёный) — виден адаптер выбранного клиента. **Выкл** (красный) — адаптера нет. **Туннель мёртв** (оранжевый) — адаптер есть, а публичный IPv4 два раза совпал с адресом без VPN (нужна проверка IP). |
+| Страна IP | Гео публичного IPv4, который получила **сама** программа. Не имя узла из Happ. `—`, пока нет IP и гео. |
+| IP / IPv6 | Публичные адреса процесса VPNfriend (если интервал включён). «Не сменился» — как запомненный домашний. |
+| Приложения | Отмеченные программы, которые сейчас открыты. |
+| Причина | Краткие измерения (нет адаптера, только SOCKS, путь/DNS/прокси, мёртвый туннель…). Длинный текст переносится. |
 
-РљРЅРѕРїРєРё: РєРѕРїРёСЂРѕРІР°С‚СЊ СЃС‚Р°С‚СѓСЃ, РѕРєРЅРѕ **РЎСЃС‹Р»РєРё**, С‚РёС…РёР№ СЂРµР¶РёРј, РЅР°СЃС‚СЂРѕР№РєРё, РѕС‚РєСЂС‹С‚СЊ VPN-РєР»РёРµРЅС‚.
-
----
-
-## Р§С‚Рѕ РїСЂРѕРІРµСЂСЏРµС‚ (С‡РµСЃС‚РЅС‹Рµ РіСЂР°РЅРёС†С‹)
-
-**Р’СЃРµРіРґР°:**
-
-- РІРёРґРµРЅ Р»Рё Р°РґР°РїС‚РµСЂ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РєР»РёРµРЅС‚Р°;
-- РєР°РєРёРµ РѕС‚РјРµС‡РµРЅРЅС‹Рµ РїСЂРѕРіСЂР°РјРјС‹ РѕС‚РєСЂС‹С‚С‹;
-- РёРґС‘С‚ Р»Рё РёРЅС‚РµСЂРЅРµС‚ **СЌС‚РѕР№** РїСЂРѕРіСЂР°РјРјС‹ С‡РµСЂРµР· Р°РґР°РїС‚РµСЂ (СЌС‚Рѕ РЅРµ В«РІРµСЃСЊ РєРѕРјРїСЊСЋС‚РµСЂ РІ VPNВ»);
-- РЅРµ РѕСЃС‚Р°Р»СЃСЏ Р»Рё СЃРёСЃС‚РµРјРЅС‹Р№ DNS РЅР° РѕР±С‹С‡РЅРѕРј WiвЂ‘Fi/РєР°Р±РµР»Рµ;
-- РЅРµ РІРєР»СЋС‡РµРЅС‹ Р»Рё СЃРёСЃС‚РµРјРЅС‹Рµ РїСЂРѕРєСЃРё.
-
-**Р•СЃР»Рё РІРєР»СЋС‡РµРЅР° РїСЂРѕРІРµСЂРєР° РІРЅРµС€РЅРµРіРѕ IP:**
-
-- РїСѓР±Р»РёС‡РЅС‹Р№ IPv4 VPNfriend;
-- РїСЂРё РЅР°Р»РёС‡РёРё вЂ” РїСѓР±Р»РёС‡РЅС‹Р№ IPv6;
-- РјС‘СЂС‚РІС‹Р№ С‚СѓРЅРЅРµР»СЊ (РґРІР° СЃРѕРІРїР°РґРµРЅРёСЏ СЃ РґРѕРјР°С€РЅРёРј Р°РґСЂРµСЃРѕРј РїСЂРё РїРѕРґРЅСЏС‚РѕРј Р°РґР°РїС‚РµСЂРµ);
-- СЃС‚СЂР°РЅР° РїРѕ РіРµРѕ СЌС‚РѕРіРѕ IPv4.
-
-Р›РѕРєР°Р»СЊРЅС‹Р№ SOCKS Happ Р±РµР· Р°РґР°РїС‚РµСЂР° Р·РµР»С‘РЅС‹Рј **РЅРµ** СЃС‡РёС‚Р°РµС‚СЃСЏ.
+Кнопки: копировать статус, окно **Ссылки**, тихий режим, настройки, открыть VPN-клиент.
 
 ---
 
-## РќР°СЃС‚СЂРѕР№РєРё
+## Что проверяет (честные границы)
 
-1. **РќР°СЃС‚СЂРѕР№РєРё** вЂ” РєР»РёРµРЅС‚, СЏР·С‹Рє, РЅР°Р±Р»СЋРґРµРЅРёРµ Р·Р° РїСЂРѕРіСЂР°РјРјР°РјРё, РїР°СѓР·С‹, РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёСЏ, РёРЅС‚РµСЂРІР°Р» IP, СЂР°Р·РјРµСЂ/С€СЂРёС„С‚/РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊ, Р°РІС‚РѕР·Р°РїСѓСЃРє (СЏСЂР»С‹Рє РЅР° СЂР°Р±РѕС‡РёР№ СЃС‚РѕР» вЂ” РЅР° Windows).
-2. **РњРѕС‘** (РјРѕР¶РЅРѕ Р·Р°РєСЂС‹С‚СЊ РїР°СЂРѕР»РµРј):
-   - **РЎСЃС‹Р»РєРё** вЂ” РїРѕР»РµР·РЅС‹Рµ СЃС‚РѕСЂРѕРЅРЅРёРµ СЃР°Р№С‚С‹; РіР°Р»РѕС‡РєР° вЂ” РїРѕРєР°Р·С‹РІР°С‚СЊ РІ РѕРєРЅРµ В«РЎСЃС‹Р»РєРёВ»;
-   - **VPN-РїСЂРёР»РѕР¶РµРЅРёСЏ** вЂ” РєРѕР»Р»РµРєС†РёСЏ РєР»РёРµРЅС‚РѕРІ РґР»СЏ РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ РёР· С‚СЂРµСЏ / РјРµРЅСЋ РєСЂСѓР¶РєР°;
-   - **Р”Р°РЅРЅС‹Рµ** вЂ” РїРѕСЃС‚Р°РІС‰РёРєРё (СЃР°Р№С‚, Telegram, Discord, РїРѕС‡С‚Р°, СЃРµРєСЂРµС‚С‹) Рё РїР°СЂРѕР»СЊ РЅР° РІРєР»Р°РґРєСѓ.
-3. **РЎРїСЂР°РІРєР°** / **РџРѕРЅСЏС‚РёСЏ** вЂ” РІСЃС‚СЂРѕРµРЅРЅС‹Рµ С‚РµРєСЃС‚С‹ (РґР»РёРЅРЅС‹Рµ С‚РµР»Р° вЂ” RU / EN / ZH).
+**Всегда:**
 
-РћРєРЅРѕ **РЎСЃС‹Р»РєРё** (РєРЅРѕРїРєР° СЃ С†РµРїСЊСЋ): РїРѕРёСЃРє РїРѕ РѕС‚РјРµС‡РµРЅРЅС‹Рј РїРѕР»РµР·РЅС‹Рј СЃСЃС‹Р»РєР°Рј Рё РєРѕРЅС‚Р°РєС‚Р°Рј РїСЂРѕРІР°Р№РґРµСЂРѕРІ.
+- виден ли адаптер выбранного клиента;
+- какие отмеченные программы открыты;
+- идёт ли интернет **этой** программы через адаптер (это не «весь компьютер в VPN»);
+- не остался ли системный DNS на обычном Wi‑Fi/кабеле;
+- не включены ли системные прокси.
 
-РЇР·С‹РєРё РёРЅС‚РµСЂС„РµР№СЃР°: 14. Р”Р»РёРЅРЅР°СЏ СЃРїСЂР°РІРєР° вЂ” РІ РѕСЃРЅРѕРІРЅРѕРј RU / EN / ZH.
+**Если включена проверка внешнего IP:**
+
+- публичный IPv4 VPNfriend;
+- при наличии — публичный IPv6;
+- мёртвый туннель (два совпадения с домашним адресом при поднятом адаптере);
+- страна по гео этого IPv4.
+
+Локальный SOCKS Happ без адаптера зелёным **не** считается.
 
 ---
 
-## РљР»РёРµРЅС‚С‹
+## Настройки
 
-Happ, AmneziaVPN, WireGuard, OpenVPN, ProtonVPN, Mullvad, Windscribe, Outline, Cloudflare WARP, Psiphon, Lantern, Hiddify, v2rayN, Nekoray РёР»Рё **В«Р”СЂСѓРіРѕРµВ»** (РёРјСЏ РїСЂРѕС†РµСЃСЃР° Р±РµР· `.exe`).
+1. **Настройки** — клиент, язык, наблюдение за программами, паузы, предупреждения, интервал IP, размер/шрифт/прозрачность, автозапуск (ярлык на рабочий стол — на Windows).
+2. **Моё** (можно закрыть паролем):
+   - **Ссылки** — полезные сторонние сайты; галочка — показывать в окне «Ссылки»;
+   - **VPN-приложения** — коллекция клиентов для переключения из трея / меню кружка;
+   - **Данные** — поставщики (сайт, Telegram, Discord, почта, секреты) и пароль на вкладку.
+3. **Справка** / **Понятия** — встроенные тексты (длинные тела — RU / EN / ZH).
 
-Psiphon/Lantern С‚РѕР»СЊРєРѕ РєР°Рє РїСЂРѕРєСЃРё (Р±РµР· Р°РґР°РїС‚РµСЂР°) РїСЂРѕРіСЂР°РјРјР° РЅРµ СѓРІРёРґРёС‚ РєР°Рє В«Р’РєР»В».
+Окно **Ссылки** (кнопка с цепью): поиск по отмеченным полезным ссылкам и контактам провайдеров.
+
+Языки интерфейса: 14. Длинная справка — в основном RU / EN / ZH.
+
+---
+
+## Клиенты
+
+Happ, AmneziaVPN, WireGuard, OpenVPN, ProtonVPN, Mullvad, Windscribe, Outline, Cloudflare WARP, Psiphon, Lantern, Hiddify, v2rayN, Nekoray или **«Другое»** (имя процесса без `.exe`).
+
+Psiphon/Lantern только как прокси (без адаптера) программа не увидит как «Вкл».
 
 ---
 
 ## Windows
 
-РќСѓР¶РµРЅ .NET Framework 4.x.
+Нужен .NET Framework 4.x.
 
-1. РЎРєР°С‡Р°Р№С‚Рµ [`VPNfriend.exe`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.exe).
-2. Р—Р°РїСѓСЃС‚РёС‚Рµ. РћРґРёРЅ СЌРєР·РµРјРїР»СЏСЂ; РЅРѕРІР°СЏ РєРѕРїРёСЏ РёР· РґСЂСѓРіРѕР№ РїР°РїРєРё РјРѕР¶РµС‚ Р·Р°РјРµРЅРёС‚СЊ СЃС‚Р°СЂСѓСЋ.
-3. Р—РЅР°С‡РѕРє РІ С‚СЂРµРµ Рё РєР°СЂС‚РѕС‡РєР°. РќР°СЃС‚СЂРѕР№РєРё вЂ” С€РµСЃС‚РµСЂС‘РЅРєР° РёР»Рё РјРµРЅСЋ С‚СЂРµСЏ.
+1. Скачайте [`VPNfriend.exe`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.exe).
+2. Запустите. Один экземпляр; новая копия из другой папки может заменить старую.
+3. Значок в трее и карточка. Настройки — шестерёнка или меню трея.
 
-**РЈРґР°Р»РµРЅРёРµ:** С‚СЂРµР№ в†’ В«РЈРґР°Р»РёС‚СЊ VPNfriendвЂ¦В». Р•СЃР»Рё СЃС‚РёСЂР°РµС‚Рµ exe СЂСѓРєР°РјРё вЂ” СЃРЅР°С‡Р°Р»Р° СЃРЅРёРјРёС‚Рµ Р°РІС‚РѕР·Р°РїСѓСЃРє.
+**Удаление:** трей → «Удалить VPNfriend…». Если стираете exe руками — сначала снимите автозапуск.
 
-Р›РѕРі: `vpnfriend.log` СЂСЏРґРѕРј СЃ РїСЂРѕРіСЂР°РјРјРѕР№.
+Лог: `vpnfriend.log` рядом с программой.
 
-РЎР±РѕСЂРєР°: `Build-VPNfriend.bat` (РґР»СЏ Р°РІС‚РѕСЂР° / СЃ СЂР°Р·СЂРµС€РµРЅРёРµРј).
+Сборка: `Build-VPNfriend.bat` (для автора / с разрешением).
 
 ---
 
 ## macOS
 
-macOS 12+. РЈРґРѕР±РЅРµРµ DMG:
+macOS 12+. Удобнее DMG:
 
-1. РћС‚РєСЂРѕР№С‚Рµ [`VPNfriend.dmg`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.dmg).
-2. **РџРµСЂРµС‚Р°С‰РёС‚Рµ `VPNfriend.app` РЅР° РїР°РїРєСѓ В«РџСЂРѕРіСЂР°РјРјС‹В»** РІ РѕРєРЅРµ РґРёСЃРєР°.
-3. РР·РІР»РµРєРёС‚Рµ РґРёСЃРє. Р—Р°РїСѓСЃРєР°Р№С‚Рµ РёР· В«РџСЂРѕРіСЂР°РјРјС‹В», РЅРµ СЃ С„Р»РµС€РєРё/DMG.
+1. Откройте [`VPNfriend.dmg`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.dmg).
+2. **Перетащите `VPNfriend.app` на папку «Программы»** в окне диска.
+3. Извлеките диск. Запускайте из «Программы», не с флешки/DMG.
 
-Р•СЃР»Рё РѕС‚РєСЂС‹Р»Рё СЃ С„Р»РµС€РєРё вЂ” РїСЂРѕРіСЂР°РјРјР° РїСЂРµРґР»РѕР¶РёС‚ СЃРєРѕРїРёСЂРѕРІР°С‚СЊ РІ В«РџСЂРѕРіСЂР°РјРјС‹В» РёР»Рё РѕС‚РєСЂС‹С‚СЊ СѓР¶Рµ СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅСѓСЋ РєРѕРїРёСЋ.
+Если открыли с флешки — программа предложит скопировать в «Программы» или открыть уже установленную копию.
 
-Gatekeeper: РїСЂР°РІС‹Р№ РєР»РёРє в†’ В«РћС‚РєСЂС‹С‚СЊВ».
+Gatekeeper: правый клик → «Открыть».
 
-РќР° Mac вЂ” **РєСЂСѓР¶РѕРє РІ СЃС‚СЂРѕРєРµ РјРµРЅСЋ** (РЅРµ Dock). Р›РµРІС‹Р№ РєР»РёРє вЂ” РєР°СЂС‚РѕС‡РєР°, РїСЂР°РІС‹Р№ вЂ” РјРµРЅСЋ. РћР±С‰РёР№ `utun` Р·Р°СЃС‡РёС‚С‹РІР°РµС‚СЃСЏ С‚РѕР»СЊРєРѕ РїСЂРё Р·Р°РїСѓС‰РµРЅРЅРѕРј РїСЂРѕС†РµСЃСЃРµ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РєР»РёРµРЅС‚Р°. Safari РІС…РѕРґРёС‚ РІ Р±СЂР°СѓР·РµСЂС‹.
+На Mac — **кружок в строке меню** (не Dock). Левый клик — карточка, правый — меню. Общий `utun` засчитывается только при запущенном процессе выбранного клиента. Safari входит в браузеры.
 
-РСЃС…РѕРґРЅРёРєРё: [`mac/`](mac/). РЎР±РѕСЂРєР°: [`mac/README.txt`](mac/README.txt).
-
----
-
-## Р§РµРіРѕ РЅРµС‚
-
-- Р­С‚Рѕ РЅРµ VPN, РЅРµ РєР»РёРµРЅС‚ Рё РЅРµ kill switch.
-- Р­С‚Рѕ РЅРµ РїРѕР»РЅС‹Р№ Р°СѓРґРёС‚ DNS / IPv6 / WebRTC РІ Р±СЂР°СѓР·РµСЂРµ (ipleak.net).
-- Р­С‚Рѕ РЅРµ РґРѕРєР°Р·Р°С‚РµР»СЊСЃС‚РІРѕ, С‡С‚Рѕ В«РІСЃРµ РїСЂРѕРіСЂР°РјРјС‹ СЃРёСЃС‚РµРјС‹ РІ VPNВ».
+Исходники: [`mac/`](mac/). Сборка: [`mac/README.txt`](mac/README.txt).
 
 ---
 
-## Р‘РµР·РѕРїР°СЃРЅРѕСЃС‚СЊ
+## Чего нет
 
-- Р›РѕРіРёРЅ/РїР°СЂРѕР»СЊ/РєР»СЋС‡ РїСЂРѕРІР°Р№РґРµСЂРѕРІ РІ **РњРѕС‘** вЂ” С‡РµСЂРµР· Р·Р°С‰РёС‚Сѓ РћРЎ (DPAPI / Keychain).
-- Р’РєР»Р°РґРєСѓ В«РњРѕС‘В» РјРѕР¶РЅРѕ Р·Р°РєСЂС‹С‚СЊ РїР°СЂРѕР»РµРј.
-- РќР° ipleak.net РґР°РЅРЅС‹Рµ РЅРµ РѕС‚РїСЂР°РІР»СЏСЋС‚СЃСЏ вЂ” С‚РѕР»СЊРєРѕ РѕС‚РєСЂС‹РІР°РµС‚СЃСЏ СЃС‚СЂР°РЅРёС†Р° РІ Р±СЂР°СѓР·РµСЂРµ.
+- Это не VPN, не клиент и не kill switch.
+- Это не полный аудит DNS / IPv6 / WebRTC в браузере (ipleak.net).
+- Это не доказательство, что «все программы системы в VPN».
 
 ---
 
-## РџСЂР°РІРѕРІРѕР№ СЃС‚Р°С‚СѓСЃ
+## Безопасность
 
-В© 2026 **Denny-Wolkow**. Р’СЃРµ РїСЂР°РІР° Р·Р°С‰РёС‰РµРЅС‹.
+- Логин/пароль/ключ провайдеров в **Моё** — через защиту ОС (DPAPI / Keychain).
+- Вкладку «Моё» можно закрыть паролем.
+- На ipleak.net данные не отправляются — только открывается страница в браузере.
 
-РџРѕР»РЅС‹Р№ С‚РµРєСЃС‚: [LICENSE](LICENSE). РџСѓР±Р»РёРєР°С†РёСЏ РЅР° GitHub **РЅРµ** РѕС‚РјРµРЅСЏРµС‚ Р°РІС‚РѕСЂСЃРєРёРµ РїСЂР°РІР°. РљРѕРїРёСЂРѕРІР°РЅРёРµ, РёР·РјРµРЅРµРЅРёРµ Рё СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅРµРЅРёРµ Р±РµР· РїРёСЃСЊРјРµРЅРЅРѕРіРѕ СЂР°Р·СЂРµС€РµРЅРёСЏ Р·Р°РїСЂРµС‰РµРЅС‹. РџРћ РїСЂРµРґРѕСЃС‚Р°РІР»СЏРµС‚СЃСЏ **РєР°Рє РµСЃС‚СЊ**, Р±РµР· РіР°СЂР°РЅС‚РёР№.
+---
+
+## Правовой статус
+
+© 2026 **Denny-Wolkow**. Все права защищены.
+
+Полный текст: [LICENSE](LICENSE). Публикация на GitHub **не** отменяет авторские права. Копирование, изменение и распространение без письменного разрешения запрещены. ПО предоставляется **как есть**, без гарантий.
