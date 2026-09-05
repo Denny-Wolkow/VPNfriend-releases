@@ -14,13 +14,15 @@ Author: [Denis Wolkow](mailto:denniesw2@gmail.com) · Questions: [Discussions](h
 
 ## Download
 
-Official builds (public): [**Releases**](https://github.com/Denny-Wolkow/VPNfriend-releases/releases). This GitHub repository is **private** (source). You may **not** build or publish your own copies without the author’s permission (see [LICENSE](LICENSE)).
+Official builds (public): [**Releases**](https://github.com/Denny-Wolkow/VPNfriend-releases/releases). This repository is **downloads only** (no source). Source is not published. You may **not** build or publish your own copies without the author’s permission (see [LICENSE](LICENSE)).
 
 | Platform | File |
 |----------|------|
 | Windows | [`VPNfriend.exe`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.exe) |
 | macOS (preferred) | [`VPNfriend.dmg`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.dmg) — drag the app onto **Applications** |
 | macOS (zip) | [`VPNfriend-macOS.zip`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend-macOS.zip) |
+
+Same files are also in [`downloads/`](downloads/): [`VPNfriend.exe`](downloads/VPNfriend.exe), [`VPNfriend.dmg`](downloads/VPNfriend.dmg), [`VPNfriend-macOS.zip`](downloads/VPNfriend-macOS.zip).
 
 Release notes: [RELEASE_NOTES.md](RELEASE_NOTES.md).
 
@@ -183,6 +185,8 @@ Publishing this project on GitHub does **not** waive copyright. Access is for vi
 | Windows | [`VPNfriend.exe`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.exe) |
 | macOS (удобнее) | [`VPNfriend.dmg`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.dmg) — перетащите приложение на **«Программы»** |
 | macOS (zip) | [`VPNfriend-macOS.zip`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend-macOS.zip) |
+
+Те же файлы лежат в [`downloads/`](downloads/): [`VPNfriend.exe`](downloads/VPNfriend.exe), [`VPNfriend.dmg`](downloads/VPNfriend.dmg), [`VPNfriend-macOS.zip`](downloads/VPNfriend-macOS.zip).
 
 Заметки к выпускам: [RELEASE_NOTES.md](RELEASE_NOTES.md).
 
