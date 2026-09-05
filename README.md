@@ -6,7 +6,9 @@ VPN clients sometimes keep showing “connected” while the tunnel is already d
 
 **The program is still early / unfinished and is in active development.** Expect bugs, rough edges, and incomplete behaviour.
 
-**Current version: 1.0.1** · Windows 7+ (.NET Framework 4.x) · macOS 12+
+**Current version: 1.0.2** · Windows 7+ (.NET Framework 4.x) · macOS 12+
+
+**Latest release (always current):** [github.com/Denny-Wolkow/VPNfriend-releases/releases/latest](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest)
 
 Author: [Denis Wolkow](mailto:denniesw2@gmail.com) · Questions: [Discussions](https://github.com/Denny-Wolkow/VPNfriend-releases/discussions)
 
@@ -14,7 +16,17 @@ Author: [Denis Wolkow](mailto:denniesw2@gmail.com) · Questions: [Discussions](h
 
 ## Download
 
-Official builds (public): [**Releases**](https://github.com/Denny-Wolkow/VPNfriend-releases/releases). This repository is **downloads only** (no source). Source is not published. You may **not** build or publish your own copies without the author’s permission (see [LICENSE](LICENSE)).
+Always the **current** files (this `/latest/` link does not change when a new version is published):
+
+| Platform | Latest file |
+|----------|-------------|
+| Windows | [`VPNfriend.exe`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.exe) |
+| macOS (preferred) | [`VPNfriend.dmg`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.dmg) — drag the app onto **Applications** |
+| macOS (zip) | [`VPNfriend-macOS.zip`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend-macOS.zip) |
+
+[**Open the latest release page**](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest)
+
+Official builds only. This repository is **downloads only** (no source). You may **not** build or publish your own copies without the author’s permission (see [LICENSE](LICENSE)).
 
 | Platform | File |
 |----------|------|
@@ -170,7 +182,9 @@ Publishing this project on GitHub does **not** waive copyright. Access is for vi
 
 **Программа ещё сырая и находится в процессе разработки.** Возможны ошибки, шероховатости и незавершённое поведение.
 
-**Текущая версия: 1.0.1** · Windows 7+ (.NET Framework 4.x) · macOS 12+
+**Текущая версия: 1.0.2** · Windows 7+ (.NET Framework 4.x) · macOS 12+
+
+**Актуальный релиз (всегда последний):** [github.com/Denny-Wolkow/VPNfriend-releases/releases/latest](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest)
 
 Автор: [Denis Wolkow](mailto:denniesw2@gmail.com) · Вопросы: [Discussions](https://github.com/Denny-Wolkow/VPNfriend-releases/discussions)
 
@@ -178,7 +192,17 @@ Publishing this project on GitHub does **not** waive copyright. Access is for vi
 
 ## Скачать
 
-Официальные сборки (публичные): [**Releases**](https://github.com/Denny-Wolkow/VPNfriend-releases/releases). Этот репозиторий **закрытый** (исходники). Собирать и выкладывать свои копии **нельзя** без разрешения автора ([LICENSE](LICENSE)).
+Всегда **текущие** файлы (ссылка `/latest/` не меняется с новой версией):
+
+| Платформа | Актуальный файл |
+|-----------|-----------------|
+| Windows | [`VPNfriend.exe`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.exe) |
+| macOS (удобнее) | [`VPNfriend.dmg`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.dmg) — перетащите приложение на **«Программы»** |
+| macOS (zip) | [`VPNfriend-macOS.zip`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend-macOS.zip) |
+
+[**Страница актуального релиза**](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest)
+
+Только официальные сборки. В этом репозитории **нет исходников**. Собирать и выкладывать свои копии **нельзя** без разрешения автора ([LICENSE](LICENSE)).
 
 | Платформа | Файл |
 |-----------|------|

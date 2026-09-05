@@ -1,3 +1,32 @@
+# VPNfriend 1.0.2
+
+Mac card and settings polish so the watcher looks and behaves closer to Windows.
+
+## Changes
+- Mac status bar: icon-only buttons (copy, links, quiet, settings, open client), same layout idea as Windows.
+- Hover captions on those icons (Windows-style tooltip after a short delay).
+- Mac settings/Links: process-name hints, wrapping, Help/Concepts list on the left, search field with a label, flatter Save/Cancel.
+- Card quiet badge and row spacing aligned with Windows.
+
+## Windows
+Download: [`VPNfriend.exe`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.exe) (.NET Framework 4.x).
+
+## macOS
+Download: [`VPNfriend.dmg`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.dmg) — drag `VPNfriend.app` onto Applications. Zip: [`VPNfriend-macOS.zip`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend-macOS.zip). macOS 12+.
+
+## License
+Proprietary — see [LICENSE](LICENSE).
+
+---
+
+# VPNfriend 1.0.2 (RU)
+
+Карточка Mac как на Windows: только значки (копия, ссылки, тихий режим, настройки, открыть клиент) и подписи по наведению. Настройки и окно ссылок ближе к Windows (подсказки, перенос текста, список справки слева).
+
+Скачать: Windows [`VPNfriend.exe`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.exe) · Mac [`VPNfriend.dmg`](https://github.com/Denny-Wolkow/VPNfriend-releases/releases/latest/download/VPNfriend.dmg).
+
+---
+
 # VPNfriend 1.0.1
 
 Bugfix and polish over 1.0.
